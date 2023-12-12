@@ -23,8 +23,8 @@ This system provides user registration, login, logout, and a user profile,  publ
 - **/home/:** View a list of all public posts
 - **/create-post/**: Create a new post (requires authentication)
 - **/update-post/<post-id>**: Update the post
-- **/ImageAnalyzer/**: 
-- **/Content-Generation/**:
+- **/ImageAnalyzer/**: Take an image as input and return the extracted keywords as output
+- **/Content-Generation/**:Take the product title in the request and send the detailed description
 - **/admin:** Access the Django admin site (requires superuser privileges)
 - 
 
