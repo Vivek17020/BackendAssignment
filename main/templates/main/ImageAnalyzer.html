@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #fileInput {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #submitBtn {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #historyBtn {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        #fileList {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Welcome to Image Analyzer</h1>
+
+    <input type="file" id="fileInput" accept="image/*" multiple>
+    <label for="fileInput" id="selectFilesBtn">Select Some Files</label>
+
+    <div id="fileList"></div>
+
+    <button id="submitBtn" onclick="submitFiles()">Submit</button>
+
+    <button id="historyBtn" onclick="viewHistory()">History</button>
+
+    <script>
+        var selectedFiles = [];
+
+        document.getElementById('selectFilesBtn').addEventListener('click', function () {
+            document.getElementById('fileInput').click();
+        });
+
+        document.getElementById('fileInput').addEventListener('change', function () {
+            var fileList = document.getElementById('fileInput').files;
+            var fileListDisplay = document.getElementById('fileList');
+            fileListDisplay.innerHTML = '';
+
+            selectedFiles = [];
+
+            for (var i = 0; i < fileList.length; i++) {
+                fileListDisplay.innerHTML += '<p>' + fileList[i].name + '</p>';
+                selectedFiles.push(fileList[i]);
+            }
+        });
+
+        function submitFiles() {
+            // Add your logic for image file submission here
+            if (selectedFiles.length > 0) {
+                // Process the selectedFiles array (e.g., upload to server, analyze, etc.)
+                alert('Image files submitted!');
+            } else {
+                alert('Please select at least one image file.');
+            }
+        }
+
+        function viewHistory() {
+            // Add your logic for viewing history here
+            if (selectedFiles.length > 0) {
+                alert('Viewing history for selected image files.');
+            } else {
+                alert('No image files selected.');
+            }
+        }
+    </script>
+</body>
+
+</html>
