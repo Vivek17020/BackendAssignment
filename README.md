@@ -1,4 +1,5 @@
-## Django-User-System
+
+## Assignment Task
 
 This system provides user registration, login, logout, and a user profile,  public ,private post creation,Image analysis ,content Genration .
 
