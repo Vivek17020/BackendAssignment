@@ -93,7 +93,7 @@ def generate_product_description(request):
         )
         description = response.choices[0].text.strip()
 
-        # Extract keywords (you may need to implement a more sophisticated keyword extraction)
+      
         keywords = ["keyword1", "keyword2", "keyword3"]
 
         return JsonResponse({'description': description, 'keywords': keywords})
