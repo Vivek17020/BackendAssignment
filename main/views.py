@@ -101,6 +101,7 @@ def generate_product_description(request):
         return JsonResponse({'error': 'Invalid request method'}, status=400)
 
 # Create API-4 endpoint for image recognition
+image.api_key=''#cloud vision api
 @csrf_exempt
 def image_recognition(request):
     if request.method == 'POST':
